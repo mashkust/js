@@ -16,4 +16,8 @@ body {
       font-size: 24px;
     }
   }
+  .card > p {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }

@@ -1,6 +1,7 @@
-const pad = (num) => ("0" + num).slice(-2);
+const pad = (num: number) => ("0" + num).slice(-2);
 
-export const formatDate = (dateObj) => {
+//переводит дату в нужный формат
+export const formatDate = (dateObj: Date) => {
   return `${pad(dateObj.getDate())}/${pad(
     dateObj.getMonth() + 1
   )}/${dateObj.getFullYear()},${
