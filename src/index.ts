@@ -1,7 +1,7 @@
 import "./style.css";
 import { getData } from "./api";
 import { generateSelect } from "./generateSelect/generateSelect";
-import { Valuets } from "type";
+import { IValuets } from "type";
 
 //тестовые данные
 // const mockValuets: Valuets = {
@@ -33,7 +33,7 @@ import { Valuets } from "type";
 
 const start = async () => {
   try {
-    const valuets: Valuets = await getData();
+    const valuets: IValuets = await getData();
     // const valuets: Valuets = mockValuets;
     generateSelect(valuets);
   } catch (e) {

@@ -2,18 +2,19 @@ import { IGenerateTag } from "type";
 
 //гененирует теги по родительскому элементу и тексту
 export const generateTag = ({ element, text, key }: IGenerateTag) => {
-  if (!key) {
-    const p = document.createElement("p");
-    p.textContent = text;
-    element.appendChild(p);
-  } else {
-    const option = document.createElement("option");
-    option.value = key;
-    option.textContent = text;
+  let tag: HTMLParagraphElement | HTMLOptionElement =
+    document.createElement("p");
+  tag.textContent = text;
+  //создает option
+  if (key) {
+    tag = document.createElement("option");
+    tag.value = key;
+    tag.textContent = text;
     if (key === "default") {
-      option.setAttribute("selected", "selected");
-      option.setAttribute("disabled", "disabled");
+      ["selected", "disabled"].forEach((atr) => {
+        tag.setAttribute(atr, atr);
+      });
     }
-    element.appendChild(option);
   }
+  element.appendChild(tag);
 };

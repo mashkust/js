@@ -1,4 +1,4 @@
-interface Valuet {
+interface IValuet {
   ID: string;
   NumCode: string;
   CharCode: string;
@@ -8,11 +8,9 @@ interface Valuet {
   Previous: number;
 }
 
-export interface ObjValuet {
-  [key: string]: Valuet;
-}
+export type ObjValuet = Record<string, IValuet>;
 
-export interface Valuets {
+export interface IValuets {
   Date: string;
   PreviousDate: string;
   PreviousURL: string;
@@ -21,7 +19,7 @@ export interface Valuets {
 }
 
 export interface IGenerateCard {
-  valuets: Valuets;
+  valuets: IValuets;
   value: string;
 }
 

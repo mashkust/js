@@ -1,9 +1,9 @@
 import { generateCard } from "./generateCard/generateCard";
 import { deleteCard } from "./deleteCard/deleteCard";
-import { Valuets } from "type";
+import { IValuets } from "type";
 import { generateOption } from "./generateOption/generateOption";
 
-export const generateSelect = (valuets: Valuets) => {
+export const generateSelect = (valuets: IValuets) => {
   const valute = valuets.Valute;
 
   const select = document.createElement("select");
@@ -17,7 +17,7 @@ export const generateSelect = (valuets: Valuets) => {
     });
     document.body.appendChild(select);
   } else {
-    //отлавиливает ошибку в полученных данных при попытке отрисовки
+    //отлавливает ошибку в полученных данных при попытке отрисовки
     alert("Ошибка при отрисовке");
   }
 };
